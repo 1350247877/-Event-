@@ -1,0 +1,565 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Eventn</title>
+    <link rel="stylesheet" href="bootstrap.css">
+    <link rel="stylesheet" href="button.css">
+    <link rel="stylesheet" href="fontawesome-free-5.12.0-web/css/all.css">
+
+    <style>
+        .dropdown:hover .dropdown-menu1{
+            display: block;
+        }
+        .dropdown-menu1{
+            position: relative;
+            border: 0;
+            top: 100%;
+            left: 0;
+            display: none;
+            min-width: 160px;
+            padding: 5px 0;
+            margin: 2px 0 0;
+            font-size: 11px;
+            text-align: left;
+            list-style: none;
+        }
+
+        .button1,.button1 > a{
+            color: #777777;
+            background-color: rgba(30,30,30,0);
+            border: 0;
+            padding: 18px 12px;
+            outline:0 none;
+        }
+        .button1:hover,.button1 > a:hover{
+            color: #FFFFFF;
+            text-decoration: none;
+        }
+
+        .button2,.button2 > a{
+            color: #777777;
+            background-color: rgba(30,30,30,0);
+            border: 0;
+            padding: 9px 15px;
+            outline:0 none;
+        }
+        .button2:hover,.button2 > a:hover{
+            color: #FFFFFF;
+            text-decoration: none;
+        }
+
+        .main-container{
+            width: 100%;
+            height: 700px;
+            background-image: url("background-data-microservice.jpg");
+            background-position: center 0;
+            background-repeat: no-repeat;
+            /*background-attachment: fixed;*/
+            background-size: cover;
+            -webkit-background-size: cover;
+            -o-background-size: cover;
+            -moz-background-size: cover;
+        }
+
+        .btn1{
+            display: block;
+            width: 170px;
+            height: 56px;
+            color: white;
+            background-color: rgba(0,0,0,0);
+            border: 4px white solid;
+
+        }
+        .btn1:hover{
+            background: white;
+            color: #40B3DF;
+            text-decoration: none;
+        }
+
+        .btn2{
+            display: block;
+            width: 170px;
+            height: 56px;
+            color: white;
+            border: 0;
+            background-color: #3EABB8;
+        }
+        .btn2:hover{
+            background: white;
+            color: #40B3DF;
+            text-decoration: none;
+        }
+
+        .btn3{
+            display: block;
+            width: 170px;
+            height: 56px;
+            color: #3EABB8;
+            background-color: rgba(0,0,0,0);
+            border: 4px #3EABB8 solid;
+            padding-top: 30px;
+        }
+        .btn3:hover{
+            background: #3EABB8;
+            color: white;
+            text-decoration: none;
+        }
+
+
+        .col-md-6{
+            padding: 0 0;
+        }
+
+        .p1{
+            text-align:left;
+            font-size: 16px;
+            color: #777777;
+            padding-bottom: 20px;
+            line-height:200%;
+        }
+
+        .ht{
+            font-size: 32px;
+            color:#333333;
+            text-align:left;
+            padding-bottom: 24px;
+        }
+
+        .btn4 {
+            outline:0 none;
+            border: 0;
+            background-color: rgba(0,0,0,0);
+            color: #3EABB8;
+            font-size: 15px;
+            width: 250px;
+            transition: all 0.5s;
+            cursor: pointer;
+            margin-left: -37px;
+        }
+        .btn4 span {
+            cursor: pointer;
+            display: inline-block;
+            position: relative;
+            transition: 0.5s;
+        }
+        .btn4 span:after {
+            content: '→';
+            position: relative;
+            opacity: 0;
+            top: 1px;
+            right: -10px;
+            transition: 0.5s;
+        }
+        .btn4:hover span:after {
+            opacity: 1;
+            right: 0;
+        }
+
+        .btn5 {
+            outline:0 none;
+            border: 0;
+            background-color: rgba(0,0,0,0);
+            color: #3eabb8;
+            text-align: center;
+            padding: 20px;
+            width: 200px;
+            transition: all 0.5s;
+            cursor: pointer;
+            margin: 5px;
+        }
+        .btn5 span {
+            cursor: pointer;
+            display: inline-block;
+            position: relative;
+            transition: 0.5s;
+        }
+        .btn5 span:after {
+            content: '»';
+            position: relative;
+            opacity: 0;
+            top: 0;
+            right: -20px;
+            transition: 0.5s;
+        }
+        .btn5:hover span {
+            padding-right: 25px;
+        }
+        .btn5:hover span:after {
+            opacity: 1;
+            right: 0;
+        }
+
+        .borders:hover{
+            border:#3EABB8 3px solid;
+        }
+
+        .borders{
+            border:#f7f7f7 3px solid;
+        }
+
+        .ul1{
+            list-style-type:none;
+            line-height: 32px;
+        }
+
+        .bordera{
+            border: red 3px solid;
+        }
+
+
+
+    </style>
+
+</head>
+<body>
+<div class="row">
+    <nav class="navbar navbar-fixed-top" style="background-color: rgba(30,30,30,0.4);border: 0;font-size: 11px">
+        <div class="container-fluid" style="padding: 5px 80px">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div>
+                <a class="navbar-brand" href="#"><img src="header-icon.png" class="logo" alt="logo" style="width: 53px;height: 25px"></a>
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div>
+                <ul class="nav navbar-nav">
+                    <li><button class="button1" type="button"><a href="#">SERVICE RECIPES</a></button></li>
+                    <li class="dropdown">
+                        <button class="button1 dropdown-toggle" type="button" data-toggle="dropdown">
+                            <a href="#">DOCS&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<b class="fa fa-angle-down fa-1x"></b></a>
+                        </button>
+                        <ul class="dropdown-menu1">
+                            <li><button class="button2" type="button"><a href="#">GETING STARTED GUIDE</a></button></li>
+                            <li><button class="button2" type="button"><a href="#">USER GUIDE</a></button></li>
+                            <li><button class="button2" type="button"><a href="#">INDUSTRY WORD2VEC</a></button></li>
+                            <li><button class="button2" type="button"><a href="#">REST API</a></button></li>
+                        </ul>
+                    </li>
+                    <li><button class="button1" type="button"><a href="#">PRICING</a></button></li>
+                    <li><button class="button1" type="button"><a href="#">BLOG</a></button></li>
+                    <li><button class="button1" type="button"><a href="#">CONTACT</a></button></li>
+                </ul>
+
+                <ul class="nav navbar-nav navbar-right">
+                    <li><button class="button1" type="button">SIGN UP</button></li>
+                    <li><button class="button1" type="button">LOGIN</button></li>
+                </ul>
+            </div><!-- /.navbar-collapse -->
+        </div><!--        container-fluid-->
+    </nav>
+</div><!--导航条-->
+
+<div class="main-container">
+    <div class="row" style="width: 100%; height: 700px">
+        <div class="col-md-12" style="margin-top: 220px">
+            <div class="row">
+                <div class="col-md-12 text-center">
+                    <h1 style="color: white;font-size: 50px">HTTP Microservices</h1>
+                    <p style="color: white;font-size: 23px">Build, deploy and scale RESTful Node.js Microservices</p>
+                </div>
+            </div>
+            <div class="row" style="height: 56px;">
+                <div class="col-md-6">
+                    <div style="float: right;padding-right: 20px">
+                        <a href="#" class="btn1 text-center" style="padding-top: 15px">LEARN MORE</a>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div style="padding-left: 20px">
+                        <a href="#" class="btn2 text-center" style="padding-top: 18px">GET STARTED</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div><!--    首页（背景图）-->
+
+<div class="row" style="height: 360px;background-color: #FFFFFF">
+    <div class="col-md-10 col-md-offset-1 col-sm-12 text-center">
+        <p style="color: #333333;font-size: 24px;margin-top: 120px">Event n is a serverless platform for HTTP workloads. Instantly deploy database backed RESTful services for Webhooks, Natural Language Processing, SQL Analytics & Data</p>
+        <p style="font-size: 15px">Check out the example&nbsp
+            <a href="#" style="color:#3EABBB">Service Recipes</a>
+            ,&nbsp
+            <a href="#" style="color:#3EABBB">Getting Started Videos</a>
+            &nbspor&nbsp
+            <a href="#" style="color:#3EABBB">Signup</a>
+            &nbspin less than 30 seconds for a free account to get started .
+        </p>
+    </div>
+</div><!--介绍Eventn-->
+
+<div class="row" style="height: 452px;background-color: #f7f7f7">
+    <div class="col-md-4 text-center" style="margin-top: 130px">
+        <span style="color: #3EABBB">
+            <i class="fa fa-mouse fa-6x fa-rotate-90 fa-flip-horizontal"></i>
+        </span>
+        <p style="color: #333333;font-size: 18px">1-Click Microservice</p>
+        <p style="color: #777777;font-size: 15px">Deploy a secure, public facing HTTP microservice</p>
+        <p style="color: #777777;font-size: 15px">with database persistence with a single click.</p>
+    </div>
+
+    <div class="col-md-4 text-center" style="margin-top: 130px">
+        <span style="color: #3EABBB">
+            <i class="fa fa-tags fa-6x fa-rotate-90 fa-flip-horizontal"></i>
+        </span>
+        <p style="color: #333333;font-size: 18px">Serverless With A Free Monthly Allocation</p>
+        <p style="color: #777777;font-size: 15px">No server or container provisioning or management,</p>
+        <p style="color: #777777;font-size: 15px">pay only for what you use. Enjoy a free monthly</p>
+        <p style="color: #777777;font-size: 15px">allocation of compute time.</p>
+    </div>
+
+    <div class="col-md-4 text-center" style="margin-top: 130px">
+        <span style="color: #3EABBB">
+            <i class="fa fa-clock fa-6x fa-rotate-90 fa-flip-horizontal"></i>
+        </span>
+        <p style="color: #333333;font-size: 18px">Capture Real-time Event Data</p>
+        <p style="color: #777777;font-size: 15px">Capture real-time event data from any source utilizing</p>
+        <p style="color: #777777;font-size: 15px">JSON over HTTP. Embed ETL logic directly into a</p>
+        <p style="color: #777777;font-size: 15px">microservice making integrations a breeze.</p>
+    </div>
+</div><!--三图标-->
+
+<div class="row" style="height: 2717.34px">
+    <div class="row" style="height: 646.67px">
+        <div class="col-md-6">
+            <div style="width: 57%;height: 326.67px;margin-left: 120px;margin-top: 150px">
+                <h2 class="ht">
+                    Microservices for Data Collection and ETL
+                </h2>
+                <p class="p1">Launch microservices for real-time data collection at scale. Preform powerful data extractions and transformations on both structured and unstructured data, without the need for complex data pipelines.</p>
+                <div>
+                    <a href="#" class="btn3 text-center" style="padding-top: 15px">FIND OUT HOW</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <img src="data-warehouse-etl.jpg" alt="data-warehouse-etl" style="width: 100%;height: 646.67px">
+        </div>
+    </div>
+
+    <div class="row" style="height: 488px">
+        <div class="col-md-6">
+            <img src="data-warehouse-analytics.jpg" alt="data-warehouse-analytics" style="width: 100%;height: 488px">
+        </div>
+        <div class="col-md-6">
+            <div style="width: 57%;height: 326.67px;margin-left: 120px;margin-top: 150px">
+                <h2 class="ht">
+                    From API to BI In Minutes
+                </h2>
+                <p class="p1">Take real-time API data via webhooks and integrate to SQL in minutes. Rapidly respond to changing Business Intelligence needs across the Enterprise and visualize using Tableau and Microsoft Power BI.</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="row" style="height: 488px">
+        <div class="col-md-6">
+            <div style="width: 57%;height: 326.67px;margin-left: 120px;margin-top: 150px">
+                <h2 class="ht">
+                    Internet Of Things (IOT)
+                </h2>
+                <p class="p1">Deploy microservices for IOT applications. Utilize serverless compute power across multiple geographies for seamless and secure interoperability.</p>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <img  src="internet-of-things-iot.jpg" alt="internet-of-things-iot" style="width: 100%;height: 488px">
+        </div>
+    </div>
+
+    <div class="row" style="height: 540px">
+        <div class="col-md-6">
+            <img src="nodejs-logo.jpg" alt="nodejs-logo" style="width: 100%;height: 540px">
+        </div>
+        <div class="col-md-6">
+            <div style="width: 57%;height: 326.67px;margin-left: 120px;margin-top: 150px">
+                <h2 class="ht">
+                    JavaScript (ES6) Service Logic
+                </h2>
+                <p class="p1">Eventn microservices execute in a secure and scalable sandboxed Node.js environment. This provides freedom to not only use all JavaScript features, but also ECMAScript 2015 (ES6) features available in Node.js (v10.x) such as async/await. Additionally, Eventn also supports a set of selected NPM modules.</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="row" style="height: 554.67px">
+        <div class="col-md-6 pull-left">
+            <div style="width: 57%;height: 326.67px;margin-left: 120px;margin-top: 150px">
+                <h2 class="ht">
+                    Developer Tools
+                </h2>
+                <p class="p1">The Eventn user interface provides a JavaScript service editor and test environment for rapid microservice development.</p>
+                <div>
+                    <a href="#" class="btn3 text-center" style="padding-top: 15px">LAUNCH NEW SERVICE</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <img src="developer-tools.jpg" alt="developer-tools" style="width: 100%;height: 554.67px">
+        </div>
+    </div>
+</div><!--五图-->
+
+<div class="row" style="height: 1077px;background-color: #f7f7f7">
+    <div class="row" style="height: 157px;margin-top: 84px">
+        <div class="col-md-12">
+            <div style="width: 90%;height: 109px;padding-left: 8.5%">
+                <h5><b>____</b></h5>
+                <h5 style="font-size: 18px;color: #333333;padding-top: 20px">News & Views</h5>
+                <h4 style="font-size: 24px;color: #333333;padding-top: 20px">Latest thoughts + musings from the team.</h4>
+            </div>
+        </div>
+    </div>
+
+    <div class="row" style="width: 85.5%;height: 400px;margin-left: 7.25%">
+        <div class="col-md-4" style="position: relative">
+            <div class="borders" style="background-color: #FFFFFF;height: 360px">
+                <h5 style="color: #333333;font-size: 12px;padding: 35px 35px 16px"><b>OCTOBER 28 2018 - [BLOG]</b></h5>
+                <h4 style="color: #3EABB8;font-size: 18px;padding: 0 35px 24px">Introducing the Industry Word2Vec API</h4>
+                <h5 style="color: #777777;font-size: 15px;padding: 0 35px 24px">We are please to announce the launch of the Eventn Word2Vec service providing industry focused Text Summarization as a microservice API.</h5>
+                <button class="btn4">
+                    <span>
+                        <a href="#" style="color: #3EABB8;"><u>Read the rest</u></a>
+                    </span>
+                </button>
+            </div>
+        </div>
+
+        <div class="col-md-4" style="position: relative">
+            <div class="borders" style="background-color: #FFFFFF;height: 360px">
+                <h5 style="color: #333333;font-size: 12px;padding: 35px 35px 16px"><b>JULY 22 2018 - [BLOG]</b></h5>
+                <h4 style="color: #3EABB8;font-size: 18px;padding: 0 35px 24px">Node.js V10.1.0</h4>
+                <h5 style="color: #777777;font-size: 15px;padding: 0 35px 24px">The Eventn platform has been updated to support Node.js</h5>
+                <button class="btn4">
+                    <span>
+                        <a href="#" style="color: #3EABB8;"><u>Read the rest</u></a>
+                    </span>
+                </button>
+            </div>
+        </div>
+
+        <div class="col-md-4" style="position: relative">
+            <div class="borders" style="background-color: #FFFFFF;height: 360px">
+                <h5 style="color: #333333;font-size: 12px;padding: 35px 35px 16px"><b>APRIL 15 2018 - [SERVICE RECIPE]</b></h5>
+                <h4 style="color: #3EABB8;font-size: 18px;padding: 0 35px 24px">GEO Coordinates to Timezone</h4>
+                <h5 style="color: #777777;font-size: 15px;padding: 0 35px 24px">This microservice recipe provides a simple example of how to lookup a timezone based on GEO latitude and longitude coordinates.</h5>
+                <button class="btn4">
+                    <span>
+                        <a href="#" style="color: #3EABB8;"><u>Read the rest</u></a>
+                    </span>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <div class="row" style="width: 85.5%;height: 400px;margin-left: 7.25%">
+        <div class="col-md-4" style=";position: relative">
+            <div class="borders" style="height: 360px;background-color: #FFFFFF">
+                <h5 style="color: #333333;font-size: 12px;padding: 35px 35px 16px"><b>OCTOBER 4 2017 - [SERVICE RECIPE]</b></h5>
+                <h4 style="color: #3EABB8;font-size: 18px;padding: 0 35px 24px">Extract web page content for a given URL.</h4>
+                <h5 style="color: #777777;font-size: 15px;padding: 0 35px 24px">This recipe demonstrates how to develop a microservice for automatic content extraction from a web page.</h5>
+                <button class="btn4">
+                    <span>
+                        <a href="#" style="color: #3EABB8;"><u>Read the rest</u></a>
+                    </span>
+                </button>
+            </div>
+        </div>
+
+        <div class="col-md-4" style="position: relative">
+            <div class="borders" style="background-color: #FFFFFF;height: 360px">
+                <h5 style="color: #333333;font-size: 12px;padding: 35px 35px 16px"><b>AUGUST 5 2017 - [BLOG]</b></h5>
+                <h4 style="color: #3EABB8;font-size: 18px;padding: 0 35px 24px">July Platform Updates: Node v8.2.1, Service Recipes and LDA Topic Modelling</h4>
+                <h5 style="color: #777777;font-size: 15px;padding: 0 35px 24px">We have been busy over the last few weeks with platform and website improvements so wanted to share some of the highlights.</h5>
+                <button class="btn4">
+                    <span>
+                        <a href="#" style="color: #3EABB8;"><u>Read the rest</u></a>
+                    </span>
+                </button>
+            </div>
+        </div>
+
+        <div class="col-md-4" style="background-color: #FFFFFF;position: relative">
+            <div class="borders" style="background-color: #FFFFFF;height: 360px">
+                <h5 style="color: #333333;font-size: 12px;padding: 35px 35px 16px"><b>JULY 15 2017 - [SERVICE RECIPE]</b></h5>
+                <h4 style="color: #3EABB8;font-size: 18px;padding: 0 35px 24px">URL Topic Extraction</h4>
+                <h5 style="color: #777777;font-size: 15px;padding: 0 35px 24px">Extract topics for a given URL using Latent Dirichlet Allocation (LDA).</h5>
+                <button class="btn4">
+                    <span>
+                        <a href="#" style="color: #3EABB8;"><u>Read the rest</u></a>
+                    </span>
+                </button>
+            </div>
+        </div>
+    </div>
+</div><!--六框-->
+
+<div class="row" style="height: 235.33px;background-color: #FFFFFF">
+    <div class="text-center">
+        <h3 style="color: #3EABB8;font-size: 24px;padding-top: 70px"><b>GET STARTED FOR FREE</b></h3>
+        <button class="btn5">
+            <span>
+                <i class="fa fa-eye fa-1x">&nbsp</i><a href="#" style="color: #3EABB8;font-size: 15px"><u>Get Started</u></a>
+            </span>
+        </button>
+    </div>
+</div><!--get started-->
+
+<div class="row" style="height: 386.33px;background-color: #f7f7f7">
+    <div class="row" style="width: 92.6%;height: 128px;margin-top: 80px;margin-left: 3.7%">
+        <div class="col-md-2">
+            <div>
+                <ul class="ul1">
+                    <li>
+                        <a href="#" style="color: #333333;font-size: 15px">About</a>
+                    </li>
+                    <li>
+                        <a href="#" style="color: #333333;font-size: 15px">Pricing</a>
+                    </li>
+                    <li>
+                        <a href="#" style="color: #333333;font-size: 15px">Sign Up</a>
+                    </li>
+                    <li>
+                        <a href="#" style="color: #333333;font-size: 15px">Contact Us</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="col-md-2">
+            <div>
+                <ul class="ul1">
+                    <li>
+                        <a href="#" style="color: #333333;font-size: 15px">Terms of Service</a>
+                    </li>
+                    <li>
+                        <a href="#" style="color: #333333;font-size: 15px">Privacy Policy</a>
+                    </li>
+                    <li>
+                        <a href="#" style="color: #333333;font-size: 15px">Twitter</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="col-md-4 col-md-offset-4">
+            <div>
+                <p style="color:#777777;font-size: 15px">Subscribe to our newsletter to receive news & updates.</p>
+                <div class="input-group">
+                    <label>
+                        <input type="text" placeholder="Your Email Here" style="width: 175px;height: 50px">
+                    </label>
+                    <button type="button" style="width: 75px;height: 50px;background-color: #3EABB8;border: 0"><i class="fa fa-angle-right fa-lg"></i></button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row" style="width: 90%;height: 97px;margin-left: 5%">
+        <div class="col-md-12">
+            <hr>
+            <p style="color: #888888;font-size: 15px">© Copyright 2020 Eventn- Made with
+                <span style="color: red"><i class="fa fa-heart fa-lg"></i></span> in San Francisco, California.</p>
+        </div>
+    </div>
+</div><!--页尾-->
+
+<script src="jquery.min.js"></script>
+<script src="bootstrap.js"></script>
+</body>
+</html>
